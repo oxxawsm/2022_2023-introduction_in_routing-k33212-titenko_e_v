@@ -12,6 +12,6 @@ Author: Titenko Elena Vitalevna
 
 Lab: Lab1
 
-Date of create: 1.10.2022
+Date of create: 14.10.2022
 
 Date of finished: 21.10.2022
