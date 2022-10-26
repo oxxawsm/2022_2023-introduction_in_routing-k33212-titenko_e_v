@@ -23,7 +23,8 @@ Date of finished: 21.10.2022
 ### Ход работы
 
 1. Текст файла, который был использован для развертывания тестовой сети с расширением .yaml:
-`name: lab1
+`
+name: lab1
 
 mgmt:
   network: IotaNetwork
@@ -67,4 +68,6 @@ topology:
     - endpoints: ["SW01.01.TEST:eth2", "SW02.01.TEST:eth1"]
     - endpoints: ["SW01.01.TEST:eth3", "SW02.02.TEST:eth1"]
     - endpoints: ["SW02.01.TEST:eth2", "PC1:eth1"]
-    - endpoints: ["SW02.02.TEST:eth2", "PC2:eth1"]`
+    - endpoints: ["SW02.02.TEST:eth2", "PC2:eth1"]
+    
+    `
