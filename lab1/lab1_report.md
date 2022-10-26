@@ -24,7 +24,7 @@ Date of finished: 21.10.2022
 
 1. Текст файла, который был использован для развертывания тестовой сети с расширением .yaml:
       
-`     name: lab1
+`    name: lab1
 
       mgmt:
         network: statics
