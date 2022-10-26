@@ -92,7 +92,7 @@ Date of finished: 21.10.2022
 ![Снимок экрана от 2022-10-26 13-06-49](https://user-images.githubusercontent.com/63160594/198004120-78669251-a72b-4435-a2b9-0304c549f8b6.png)
 
 
-3. Результаты пингов
+3. Примеры пингов
 
 ![Снимок экрана от 2022-10-26 12-58-28](https://user-images.githubusercontent.com/63160594/198004826-022ec4c4-53c9-4ce4-963d-baf1ed2ff3b9.png)
 
