@@ -35,7 +35,7 @@ Date of finished: 21.10.2022
           R01.TEST:
             kind: vr-ros
             image: vrnetlab/vr-routeros:6.47.9
-            mgmt_ipv4: 172.20.20.2
+            mgmt_ipv4: 172.20.20.2`
 
           SW01.01.TEST:
             kind: vr-ros
@@ -68,6 +68,6 @@ Date of finished: 21.10.2022
           - endpoints: ["SW01.01.TEST:eth2", "SW02.01.TEST:eth1"]
           - endpoints: ["SW01.01.TEST:eth3", "SW02.02.TEST:eth1"]
           - endpoints: ["SW02.01.TEST:eth2", "PC1:eth1"]
-          - endpoints: ["SW02.02.TEST:eth2", "PC2:eth1"]
+          - endpoints: ["SW02.02.TEST:eth2", "PC2:eth1"]`
     
     
