@@ -71,3 +71,15 @@ Date of finished: 21.10.2022
           - endpoints: ["SW02.02.TEST:eth2", "PC2:eth1"]
     
     
+2. Конфигурации устройств:
+**Роутер R01.TEST**
+![Снимок экрана от 2022-10-26 13-05-36](https://user-images.githubusercontent.com/63160594/198003750-f235cc6f-c7cd-4b8b-9289-d987ae5d5c82.png)
+
+**Коммутатор первого уровня**
+![Снимок экрана от 2022-10-26 13-05-01](https://user-images.githubusercontent.com/63160594/198003841-ed9ed2b6-1dde-473e-aea6-052c32de9ec1.png)
+
+**Первый коммутатор второго уровня**
+![Снимок экрана от 2022-10-26 13-06-24](https://user-images.githubusercontent.com/63160594/198004007-68f43527-c31e-4bea-b7fa-371a8ffadf32.png)
+
+**Второй коммутатор второго уровня**
+![Снимок экрана от 2022-10-26 13-06-49](https://user-images.githubusercontent.com/63160594/198004120-78669251-a72b-4435-a2b9-0304c549f8b6.png)
