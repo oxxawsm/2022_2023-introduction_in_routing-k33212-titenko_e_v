@@ -10,7 +10,7 @@ Group: K33212
 
 Author: Titenko Elena Vitalevna
 
-Lab: Lab1
+Lab: Lab2
 
 Date of create: 1.11.2022
 
