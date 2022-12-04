@@ -192,7 +192,6 @@ Date of finished: 2.12.2022
        add bridge=EoMPLS_br interface=ether4
        add bridge=EoMPLS_br interface=EoMPLS
        /ip address
-       add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
        add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=4.4.4.4 interface=Lo0 network=4.4.4.4
        add address=172.16.5.1/30 interface=ether2 network=172.16.5.0
