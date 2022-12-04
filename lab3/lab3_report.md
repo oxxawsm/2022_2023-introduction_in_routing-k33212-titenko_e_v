@@ -92,6 +92,61 @@ Date of finished: 2.12.2022
 
 **Роутер R01.NY**
 
+       /interface bridge
+
+       add name=EoMPLS_br
+
+       add name=Lo0
+
+       /interface vpls
+
+       add cisco-style=yes cisco-style-id=100 disabled=no l2mtu=1500 mac-address=02:BD:27:52:DB:8E name=EoMPLS remote-peer=4.4.4.4
+
+       /interface wireless security-profiles
+
+       set [ find default=yes ] supplicant-identity=MikroTik
+
+       /interface bridge port
+
+       add bridge=EoMPLS_br interface=ether2
+
+       add bridge=EoMPLS_br interface=EoMPLS
+
+       /ip address
+
+       add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+
+       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
+
+       add address=172.16.1.1/30 interface=ether3 network=172.16.1.0
+
+       add address=172.16.2.1/30 interface=ether4 network=172.16.2.0
+
+       add address=1.1.1.1 interface=Lo0 network=1.1.1.1
+
+       /ip dhcp-client
+
+       add disabled=no interface=ether1
+
+       /mpls ldp
+
+       set enabled=yes transport-address=1.1.1.1
+
+       /mpls ldp interface
+
+       add interface=ether3
+
+       add interface=ether4
+
+       /routing ospf network
+
+       add area=backbone
+
+       /system identity
+
+       set name=R01.NY
+
+
    
 
 **Роутер R01.LND**
