@@ -265,7 +265,7 @@ Date of finished: 2.12.2022
     
 **PC1**
 
-  
+  g
  
 **SGI.Prism**
 
