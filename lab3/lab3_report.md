@@ -211,12 +211,57 @@ Date of finished: 2.12.2022
 
 **Роутер R01.MSK**
 
+       /interface bridge
+       add name=Lo0
+       /interface wireless security-profiles
+       set [ find default=yes ] supplicant-identity=MikroTik
+       /routing ospf instance
+       set [ find default=yes ] router-id=5.5.5.5
+       /ip address
+       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
+       add address=172.16.7.1/30 interface=ether2 network=172.16.7.0
+       add address=172.16.6.2/30 interface=ether3 network=172.16.6.0
+       add address=5.5.5.5 interface=Lo0 network=5.5.5.5
+       /ip dhcp-client
+       add disabled=no interface=ether1
+       /mpls ldp
+       set enabled=yes
+       /mpls ldp interface
+       add interface=ether2
+       add interface=ether3
+       /routing ospf network
+       add area=backbone
+       /system identity
+       set name=R01.MSK
+
 
 **Роутер R01.LBN**
 
+       /interface bridge
+       add name=Lo0
+       /interface wireless security-profiles
+       set [ find default=yes ] supplicant-identity=MikroTik
+       /routing ospf instance
+       set [ find default=yes ] router-id=6.6.6.6
+       /ip address
+       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
+       add address=6.6.6.6 interface=Lo0 network=6.6.6.6
+       add address=172.16.2.2/30 interface=ether2 network=172.16.2.0
+       add address=172.16.4.2/30 interface=ether3 network=172.16.4.0
+       add address=172.16.7.2/30 interface=ether4 network=172.16.7.0
+       /ip dhcp-client
+       add disabled=no interface=ether1
+       /mpls ldp
+       set enabled=yes
+       /mpls ldp interface
+       add interface=ether4
+       add interface=ether2
+       add interface=ether3
+       /routing ospf network
+       add area=backbone
+       /system identity
+       set name=R01.LBN
 
-**Роутер R01.MSK**
-   
     
 **PC1**
 
