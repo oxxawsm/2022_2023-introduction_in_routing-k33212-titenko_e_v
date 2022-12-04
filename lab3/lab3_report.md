@@ -138,7 +138,7 @@ Date of finished: 2.12.2022
        /ip dhcp-client
        add disabled=no interface=ether1
        /mpls ldp
-       set enabled=yes
+       set enabled=yes transport-address=2.2.2.2
        /mpls ldp interface
        add interface=ether2
        add interface=ether3
@@ -165,7 +165,7 @@ Date of finished: 2.12.2022
        /ip dhcp-client
        add disabled=no interface=ether1
        /mpls ldp
-       set enabled=yes
+       set enabled=yes transport-address=3.3.3.3
        /mpls ldp interface
        add interface=ether4
        add interface=ether3
@@ -198,7 +198,7 @@ Date of finished: 2.12.2022
        /ip dhcp-client
        add disabled=no interface=ether1
        /mpls ldp
-       set enabled=yes
+       set enabled=yes transport-address=4.4.4.4
        /mpls ldp interface
        add interface=ether3
        add interface=ether2
@@ -224,7 +224,7 @@ Date of finished: 2.12.2022
        /ip dhcp-client
        add disabled=no interface=ether1
        /mpls ldp
-       set enabled=yes
+       set enabled=yes transport-address=5.5.5.5
        /mpls ldp interface
        add interface=ether2
        add interface=ether3
@@ -251,7 +251,7 @@ Date of finished: 2.12.2022
        /ip dhcp-client
        add disabled=no interface=ether1
        /mpls ldp
-       set enabled=yes
+       set enabled=yes transport-address=6.6.6.6
        /mpls ldp interface
        add interface=ether4
        add interface=ether2
