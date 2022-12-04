@@ -157,7 +157,6 @@ Date of finished: 2.12.2022
        /routing ospf instance
        set [ find default=yes ] router-id=3.3.3.3
        /ip address
-       add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
        add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=172.16.3.2/30 interface=ether2 network=172.16.3.0
        add address=172.16.4.1/30 interface=ether3 network=172.16.4.0
