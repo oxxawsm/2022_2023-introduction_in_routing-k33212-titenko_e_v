@@ -93,7 +93,7 @@ Date of finished: 2.12.2022
 **Роутер R01.NY**
 
        /interface bridge
-       add name=EoMPLS_br
+       add name=EoMPLS_B
        add name=Lo0
        /interface vpls
        add cisco-style=yes cisco-style-id=100 disabled=no l2mtu=1500 mac-address=02:BD:27:52:DB:8E name=EoMPLS remote-peer=4.4.4.4
@@ -102,8 +102,8 @@ Date of finished: 2.12.2022
        /routing ospf instance
        set [ find default=yes ] router-id=1.1.1.1
        /interface bridge port
-       add bridge=EoMPLS_br interface=ether2
-       add bridge=EoMPLS_br interface=EoMPLS
+       add bridge=EoMPLS_B interface=ether2
+       add bridge=EoMPLS_B interface=EoMPLS
        /ip address
        add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=172.16.1.1/30 interface=ether3 network=172.16.1.0
@@ -179,7 +179,7 @@ Date of finished: 2.12.2022
 **Роутер R01.SPB**
 
        /interface bridge
-       add name=EoMPLS_br
+       add name=EoMPLS_B
        add name=Lo0
        /interface vpls
        add cisco-style=yes cisco-style-id=100 disabled=no l2mtu=1500 mac-address=02:96:AE:D1:9C:3F name=EoMPLS remote-peer=1.1.1.1
@@ -188,8 +188,8 @@ Date of finished: 2.12.2022
        /routing ospf instance
        set [ find default=yes ] router-id=4.4.4.4
        /interface bridge port
-       add bridge=EoMPLS_br interface=ether4
-       add bridge=EoMPLS_br interface=EoMPLS
+       add bridge=EoMPLS_B interface=ether4
+       add bridge=EoMPLS_B interface=EoMPLS
        /ip address
        add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=4.4.4.4 interface=Lo0 network=4.4.4.4
