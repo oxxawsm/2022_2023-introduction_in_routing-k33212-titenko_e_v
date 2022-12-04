@@ -265,7 +265,16 @@ Date of finished: 2.12.2022
     
 **PC1**
 
-  g
+       /interface wireless security-profiles
+       set [ find default=yes ] supplicant-identity=MikroTik
+       /ip address
+       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
+       add address=10.0.0.1/24 interface=ether2 network=10.0.0.0
+       /ip dhcp-client
+       add disabled=no interface=ether1
+       /system identity
+       set name=PC1
+
  
 **SGI.Prism**
 
