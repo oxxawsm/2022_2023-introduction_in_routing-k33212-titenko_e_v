@@ -147,10 +147,34 @@ Date of finished: 2.12.2022
        /system identity
        set name=R01.LND
 
-
-
-    
+  
 **Роутер R01.HKI**
+
+       /interface bridge
+       add name=Lo0
+       /interface wireless security-profiles
+       set [ find default=yes ] supplicant-identity=MikroTik
+       /routing ospf instance
+       set [ find default=yes ] router-id=3.3.3.3
+       /ip address
+       add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
+       add address=172.16.3.2/30 interface=ether2 network=172.16.3.0
+       add address=172.16.4.1/30 interface=ether3 network=172.16.4.0
+       add address=172.16.5.1/30 interface=ether4 network=172.16.5.0
+       add address=3.3.3.3 interface=Lo0 network=3.3.3.3
+       /ip dhcp-client
+       add disabled=no interface=ether1
+       /mpls ldp
+       set enabled=yes
+       /mpls ldp interface
+       add interface=ether4
+       add interface=ether3
+       add interface=ether2
+       /routing ospf network
+       add area=backbone
+       /system identity
+       set name=R01.HKI
 
 
 **Роутер R01.SPB**
