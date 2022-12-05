@@ -76,15 +76,15 @@ Date of finished: 2.12.2022
 
 
          links:
-           - endpoints: ["R01.LND:eth2","R01.NY:eth1"]
-           - endpoints: ["R01.HKI:eth3","R01.LND:eth1"]
-           - endpoints: ["R01.HKI:eth2","R01.LBN:eth2"]
-           - endpoints: ["R01.MSK:eth1","R01.SPB:eth1"]
-           - endpoints: ["R01.MSK:eth2","R01.LBN:eth1"]
-           - endpoints: ["R01.SPB:eth2","PC1:eth1"]
-           - endpoints: ["R01.SPB:eth3","R01.HKI:eth1"]
-           - endpoints: ["R01.LBN:eth3","R01.NY:eth2"]
-           - endpoints: ["R01.NY:eth3","SGI.Prism:eth1"]
+           - endpoints: ["SGI-Prism:eth1","R01.NY:eth1"]
+           - endpoints: ["R01.NY:eth2","R01.LND:eth1"]
+           - endpoints: ["R01.NY:eth3","R01.LBN:eth1"]
+           - endpoints: ["R01.LND:eth2","R01.HKI:eth1"]
+           - endpoints: ["R01.LBN:eth2","R01.HKI:eth2"]
+           - endpoints: ["R01.LBN:eth3","R01.MSK:eth1"]
+           - endpoints: ["R01.HKI:eth3","R01.SPB:eth1"]
+           - endpoints: ["R01.SPB:eth2","R01.MSK:eth2"]
+           - endpoints: ["R01.SPB:eth3","PC1:eth1"]
 
 
  
