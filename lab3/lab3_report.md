@@ -105,7 +105,6 @@ Date of finished: 2.12.2022
        add bridge=EoMPLS_B interface=ether2
        add bridge=EoMPLS_B interface=EoMPLS
        /ip address
-       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=172.16.1.1/30 interface=ether3 network=172.16.1.0
        add address=172.16.2.1/30 interface=ether4 network=172.16.2.0
        add address=1.1.1.1 interface=Lo0 network=1.1.1.1
@@ -131,7 +130,6 @@ Date of finished: 2.12.2022
        /routing ospf instance
        set [ find default=yes ] router-id=2.2.2.2
        /ip address
-       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=2.2.2.2 interface=Lo0 network=2.2.2.2
        add address=172.16.1.2/30 interface=ether2 network=172.16.1.0
        add address=172.16.3.1/30 interface=ether3 network=172.16.3.0
@@ -157,7 +155,6 @@ Date of finished: 2.12.2022
        /routing ospf instance
        set [ find default=yes ] router-id=3.3.3.3
        /ip address
-       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=172.16.3.2/30 interface=ether2 network=172.16.3.0
        add address=172.16.4.1/30 interface=ether3 network=172.16.4.0
        add address=172.16.5.1/30 interface=ether4 network=172.16.5.0
@@ -191,7 +188,6 @@ Date of finished: 2.12.2022
        add bridge=EoMPLS_B interface=ether4
        add bridge=EoMPLS_B interface=EoMPLS
        /ip address
-       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=4.4.4.4 interface=Lo0 network=4.4.4.4
        add address=172.16.5.1/30 interface=ether2 network=172.16.5.0
        add address=172.16.6.1/30 interface=ether3 network=172.16.6.0
@@ -218,7 +214,6 @@ Date of finished: 2.12.2022
        /routing ospf instance
        set [ find default=yes ] router-id=5.5.5.5
        /ip address
-       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=172.16.7.1/30 interface=ether2 network=172.16.7.0
        add address=172.16.6.2/30 interface=ether3 network=172.16.6.0
        add address=5.5.5.5 interface=Lo0 network=5.5.5.5
@@ -244,7 +239,6 @@ Date of finished: 2.12.2022
        /routing ospf instance
        set [ find default=yes ] router-id=6.6.6.6
        /ip address
-       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=6.6.6.6 interface=Lo0 network=6.6.6.6
        add address=172.16.2.2/30 interface=ether2 network=172.16.2.0
        add address=172.16.4.2/30 interface=ether3 network=172.16.4.0
@@ -268,7 +262,6 @@ Date of finished: 2.12.2022
        /interface wireless security-profiles
        set [ find default=yes ] supplicant-identity=MikroTik
        /ip address
-       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=10.0.0.1/24 interface=ether2 network=10.0.0.0
        /ip dhcp-client
        add disabled=no interface=ether1
@@ -281,7 +274,6 @@ Date of finished: 2.12.2022
        /interface wireless security-profiles
        set [ find default=yes ] supplicant-identity=MikroTik
        /ip address
-       add address=172.15.255.30/30 interface=ether1 network=172.15.255.28
        add address=10.0.0.2/24 interface=ether2 network=10.0.0.0
        /ip dhcp-client
        add disabled=no interface=ether1
