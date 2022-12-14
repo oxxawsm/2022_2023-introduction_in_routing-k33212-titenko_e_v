@@ -202,6 +202,7 @@ Date of finished: 2.12.2022
        /mpls ldp interface
        add interface=ether3
        add interface=ether2
+       add interface=ether4
        /routing ospf network
        add area=backbone
        /system identity
