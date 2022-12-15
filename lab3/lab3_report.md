@@ -189,7 +189,7 @@ Date of finished: 2.12.2022
        add bridge=EoMPLS_B interface=EoMPLS
        /ip address
        add address=4.4.4.4 interface=Lo0 network=4.4.4.4
-       add address=172.16.5.1/30 interface=ether2 network=172.16.5.0
+       add address=172.16.5.2/30 interface=ether2 network=172.16.5.0
        add address=172.16.6.1/30 interface=ether3 network=172.16.6.0
        /ip dhcp-client
        add disabled=no interface=ether1
