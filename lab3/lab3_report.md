@@ -23,6 +23,10 @@ Date of finished: 16.12.2022
 
 ### Ход работы
 
+#### Схема сети
+![lab3_routing](https://user-images.githubusercontent.com/63160594/208048646-378a4cb6-a353-43dc-bc48-4d641cdb7b86.jpg)
+
+
 1. Текст файла, который был использован для развертывания тестовой сети с расширением .yaml:
 
        name: lab3
