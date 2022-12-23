@@ -98,6 +98,38 @@ Date of finished: 26.12.2022
 
 **Роутер R01.NY**
 
+        /interface bridge
+        add name=L0
+        /interface wireless security-profiles
+        set [ find default=yes ] supplicant-identity=MikroTik
+        /routing bgp instance
+        set default client-to-client-reflection=no
+        /ip address
+        add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+        add address=10.0.10.1 interface=L0 network=10.0.10.1
+        add address=172.16.1.1 interface=ether3 network=172.16.1.0
+        add address=192.168.66.1 interface=ether2 network=192.168.66.0
+        /ip dhcp-client
+        add disabled=no interface=ether1
+        /ip route vrf
+        add export-route-targets=65530:666 import-route-targets=655:666 interfaces=ether2 route-distinguisher=65530:666 \
+            routing-mark=VRF_DEVOPS
+        /mpls ldp
+        set enabled=yes lsr-id=10.0.10.1 transport-address=10.0.10.1
+        /mpls ldp interface
+        add interface=ether3
+        /routing bgp instance vrf
+        add redistribute-connected=yes routing-mark=VRF_DEVOPS
+        /routing bgp network
+        add network=172.16.0.0/16
+        /routing bgp peer
+        add address-families=ip,l2vpn,l2vpn-cisco,vpnv4 name=peer1 remote-address=10.0.11.1 remote-as=65530 update-source=L0
+        /routing ospf network
+        add area=backbone
+        /system identity
+        set name=R01.NY
+
+
 
 **Роутер R01.LND**
 
