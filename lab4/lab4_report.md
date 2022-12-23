@@ -199,6 +199,63 @@ Date of finished: 26.12.2022
 
 **Роутер R01.LBN**
 
+        /interface bridge
+
+        add name=L0
+
+        /interface wireless security-profiles
+
+        set [ find default=yes ] supplicant-identity=MikroTik
+
+        /routing bgp instance
+
+        set default router-id=10.0.12.1
+
+        /ip address
+
+        add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+
+        add address=10.0.12.1 interface=L0 network=10.0.12.1
+
+        add address=172.16.4.3/30 interface=ether2 network=172.16.4.0
+
+        add address=172.16.5.1/30 interface=ether4 network=172.16.5.0
+
+        /ip dhcp-client
+
+        add disabled=no interface=ether1
+
+        /mpls ldp
+
+        set enabled=yes lsr-id=10.0.12.1 transport-address=10.0.12.1
+
+        /mpls ldp interface
+
+        add interface=ether2
+
+        add interface=ether4
+
+        /routing bgp network
+
+        add network=172.16.0.0/16
+
+        /routing bgp peer
+
+        add address-families=ip,l2vpn,l2vpn-cisco,vpnv4 name=peer1 remote-address=10.0.11.1 remote-as=65530 route-reflect=yes \
+
+            update-source=L0
+
+        add address-families=ip,l2vpn,l2vpn-cisco,vpnv4 name=peer1 remote-address=10.0.13.1 remote-as=65530 update-source=L0
+
+        /routing ospf network
+
+        add area=backbone
+
+        /system identity
+
+        set name=R01.LBN
+
+
 
 **Роутер R01.SVL**
 
