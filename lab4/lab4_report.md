@@ -329,7 +329,7 @@ Date of finished: 26.12.2022
 
 #### Часть вторая       
 
-Для настройки VPLS с интерфейсов был снят VRF. Далее на роутерах были введены аналогичные команды для настройки VPLS:
+Для настройки VPLS с интерфейсов был снят VRF. Оставлены настройки ip-адресов ПК. Далее на роутерах были введены аналогичные команды для настройки VPLS:
 
         /interface vpls> add advertised-l2mtu=1526 cisco-style=yes cisco-style-id=5 disabled=no l2mtu=1526 name=junos-l2circuit remote-peer=2.2.2.2
 
