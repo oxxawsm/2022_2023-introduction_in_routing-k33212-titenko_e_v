@@ -25,6 +25,8 @@ Date of finished: 26.12.2022
 
 #### Схема сети
 
+
+
 1. Текст файла, который был использован для развертывания тестовой сети с расширением .yaml:
 
         name: lab4
@@ -94,10 +96,13 @@ Date of finished: 26.12.2022
             - endpoints: ["R01.SVL:eth2","PC3:eth1"]
 
 
+#### Часть первая
+
 2. Конфигурации устройств:
 
 **Роутер R01.NY**
 
+        /interface bridge
         add name=Lo
         /interface wireless security-profiles
         set [ find default=yes ] supplicant-identity=MikroTik
@@ -132,6 +137,7 @@ Date of finished: 26.12.2022
 
 **Роутер R01.LND**
 
+        /interface bridge
         add name=Lo
         /interface wireless security-profiles
         set [ find default=yes ] supplicant-identity=MikroTik
@@ -168,6 +174,7 @@ Date of finished: 26.12.2022
 
 **Роутер R01.HKI**
 
+        /interface bridge
         add name=Lo
         /interface wireless security-profiles
         set [ find default=yes ] supplicant-identity=MikroTik
@@ -202,6 +209,7 @@ Date of finished: 26.12.2022
 
 **Роутер R01.SPB**
 
+        /interface bridge
         add name=Lo
         /interface wireless security-profiles
         set [ find default=yes ] supplicant-identity=MikroTik
@@ -236,6 +244,7 @@ Date of finished: 26.12.2022
 
 **Роутер R01.LBN**
 
+        /interface bridge
         add name=Lo
         /interface wireless security-profiles
         set [ find default=yes ] supplicant-identity=MikroTik
@@ -271,6 +280,7 @@ Date of finished: 26.12.2022
 
 **Роутер R01.SVL**
 
+        /interface bridge
         add name=Lo
         /interface wireless security-profiles
         set [ find default=yes ] supplicant-identity=MikroTik
@@ -302,18 +312,17 @@ Date of finished: 26.12.2022
         /system identity
         set name=R01.SVL
 
+3. Проверка связности по VRF:
 
-**PC1**
+![Снимок экрана от 2022-12-25 15-20-13](https://user-images.githubusercontent.com/63160594/209468117-637e24ca-1ecd-41ef-a177-10d554ae079f.png)
 
+![Снимок экрана от 2022-12-25 15-24-09](https://user-images.githubusercontent.com/63160594/209468127-88270f56-da83-491f-a612-c9b754b8d110.png)
 
-**PC2**
+![Снимок экрана от 2022-12-25 15-28-09](https://user-images.githubusercontent.com/63160594/209468131-9004bae4-be6a-4f42-979f-dd332d9a64eb.png)
 
+![Снимок экрана от 2022-12-25 15-27-50](https://user-images.githubusercontent.com/63160594/209468138-c2856107-fc7c-4e1d-81d2-c125b9a4a6c6.png)
 
-**PC3**
-
-
-3. Примеры пингов:
-
+![Снимок экрана от 2022-12-25 15-27-19](https://user-images.githubusercontent.com/63160594/209468146-081fe9c2-9897-4c4f-a97f-5694145b859a.png)
 
 
 ### Вывод
