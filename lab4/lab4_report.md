@@ -34,7 +34,7 @@ Date of finished: 13.01.2023
 
         mgmt:
           network: statics
-          ipv4_subnet: 172.20.24.0/24
+          ipv4_subnet: 172.21.24.0/24
 
         topology:
 
