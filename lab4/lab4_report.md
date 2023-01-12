@@ -14,7 +14,7 @@ Lab: Lab3
 
 Date of create: 16.12.2022
 
-Date of finished: 26.12.2022
+Date of finished: 13.01.2023
 
 
 # Отчёт по лабораторной работе №4 "Эмуляция распределенной корпоративной сети связи, настройка iBGP, организация L3VPN, VPLS"
@@ -42,47 +42,47 @@ Date of finished: 26.12.2022
             R01.NY:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.2
+              mgmt_ipv4: 172.21.24.2
 
             R01.LND:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.3
+              mgmt_ipv4: 172.21.24.3
 
             R01.HKI:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.4
+              mgmt_ipv4: 172.21.24.4
 
             R01.SPB:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.5
+              mgmt_ipv4: 172.21.24.5
 
             R01.LBN:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.6
+              mgmt_ipv4: 172.21.24.6
 
             R01.SVL:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.7
+              mgmt_ipv4: 172.21.24.7
 
             PC1:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.8
+              mgmt_ipv4: 172.21.24.8
 
             PC2:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.9
+              mgmt_ipv4: 172.21.24.9
 
             PC3:
               kind: vr-ros
               image: vrnetlab/vr-routeros:6.47.9
-              mgmt_ipv4: 172.20.24.10   
+              mgmt_ipv4: 172.21.24.10   
 
 
           links:
@@ -329,7 +329,8 @@ Date of finished: 26.12.2022
 
 #### Часть вторая       
 
-Для настройки VPLS с интерфейсов был снят VRF.
+1. Для настройки VPLS с интерфейсов был снят VRF.
+2. Роутерам NY, SPB и SVL были переданы следующие настройки:
 
 **Роутер R01.NY**
 
@@ -442,6 +443,31 @@ Date of finished: 26.12.2022
         /system identity
         set name=R01.SVL
   
+3. Также комьютерам были назначены ip-адреса из одной сети 192.168.0.0:
+
+**PC1**
+
+        [admin@PC1] > /ip address
+        [admin@PC1] /ip address> add address=192.168.0.1/24 interface=ether2 network=192.168.0.0
+
+**PC2**
+
+        [admin@PC2] > /ip address
+        [admin@PC2] /ip address> add address=192.168.0.2/24 interface=ether2 network=192.168.0.0
+
+**PC3**
+
+        [admin@PC3] > /ip address
+        [admin@PC3] /ip address> add address=192.168.0.3/24 interface=ether2 network=192.168.0.0
+
+4. Проверка связности сети:
+
+![Снимок экрана от 2023-01-12 19-45-31](https://user-images.githubusercontent.com/63160594/212131603-f5153565-1d63-403d-9851-646dacb8699e.png)
+
+![Снимок экрана от 2023-01-12 19-46-07](https://user-images.githubusercontent.com/63160594/212131627-ddd7b4de-74fd-4d2e-8d02-90b43252065d.png)
+
+![Снимок экрана от 2023-01-12 19-46-35](https://user-images.githubusercontent.com/63160594/212131672-accf0d9d-c45f-4a38-aa6e-1c39bd357c73.png)
+
 
 ### Вывод
 В ходе лабораторной работы №4 изучены протоколы BGP, MPLS, правила организации L3VPN и VPLS, настроен VRF и VPLS.
