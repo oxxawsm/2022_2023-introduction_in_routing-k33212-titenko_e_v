@@ -331,7 +331,117 @@ Date of finished: 26.12.2022
 
 Для настройки VPLS с интерфейсов был снят VRF.
 
+**Роутер R01.NY**
 
+        /interface bridge
+        add name=Lo
+        add name=VPLS
+        /interface vpls
+        add disabled=no l2mtu=1500 mac-address=02:3F:7D:D0:E8:46 name=vpls1 remote-peer=4.4.4.4 vpls-id=10:0
+        add disabled=no l2mtu=1500 mac-address=02:FD:62:EA:D0:A9 name=vpls2 remote-peer=6.6.6.6 vpls-id=10:0
+        /interface wireless security-profiles
+        set [ find default=yes ] supplicant-identity=MikroTik
+        /routing bgp instance
+        set default router-id=1.1.1.1
+        /routing ospf instance
+        set [ find default=yes ] router-id=1.1.1.1
+        /interface bridge port
+        add bridge=VPLS interface=ether2
+        add bridge=VPLS interface=vpls1
+        /ip address
+        add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+        add address=1.1.1.1 interface=Lo network=1.1.1.1
+        add address=172.16.1.1/30 interface=ether3 network=172.16.1.0
+        add address=192.168.20.1/30 interface=ether2 network=192.168.20.0
+        /ip dhcp-client
+        add disabled=no interface=ether1
+        /mpls ldp
+        set enabled=yes
+        /mpls ldp interface
+        add interface=ether3
+        /routing bgp peer
+        add address-families=ip,l2vpn,l2vpn-cisco,vpnv4 name=peer1 remote-address=2.2.2.2 remote-as=65530 \
+            update-source=Lo
+        /routing ospf network
+        add area=backbone
+        /system identity
+        set name=R01.NY
+
+
+**Роутер R01.SPB**
+
+        /interface bridge
+        add name=Lo
+        add name=VPLS
+        /interface vpls
+        add disabled=no l2mtu=1500 mac-address=02:2D:B2:04:58:B5 name=vpls1 remote-peer=1.1.1.1 vpls-id=10:0
+        add disabled=no l2mtu=1500 mac-address=02:07:F9:C5:13:11 name=vpls2 remote-peer=6.6.6.6 vpls-id=10:0
+        /interface wireless security-profiles
+        set [ find default=yes ] supplicant-identity=MikroTik
+        /routing bgp instance
+        set default router-id=4.4.4.4
+        /routing ospf instance
+        set [ find default=yes ] router-id=4.4.4.4
+        /interface bridge port
+        add bridge=VPLS interface=ether3
+        add bridge=VPLS interface=vpls1
+        add bridge=VPLS interface=vpls2
+        /ip address
+        add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+        add address=4.4.4.4 interface=Lo network=4.4.4.4
+        add address=172.16.5.2/30 interface=ether2 network=172.16.5.0
+        add address=192.168.10.1/30 interface=ether3 network=192.168.10.0
+        /ip dhcp-client
+        add disabled=no interface=ether1
+        /mpls ldp
+        set enabled=yes
+        /mpls ldp interface
+        add interface=ether2
+        /routing bgp peer
+        add address-families=ip,l2vpn,l2vpn-cisco,vpnv4 name=peer1 remote-address=3.3.3.3 remote-as=65530 \
+            update-source=Lo
+        /routing ospf network
+        add area=backbone
+        /system identity
+        set name=R01.SPB
+        
+  **Роутер R01.SVL**
+  
+        /interface bridge
+        add name=Lo
+        add name=VPLS
+        /interface vpls
+        add disabled=no l2mtu=1500 mac-address=02:A3:F4:DF:B8:5F name=vpls1 remote-peer=1.1.1.1 vpls-id=10:0
+        add disabled=no l2mtu=1500 mac-address=02:44:7B:1A:38:5A name=vpls2 remote-peer=4.4.4.4 vpls-id=10:0
+        /interface wireless security-profiles
+        set [ find default=yes ] supplicant-identity=MikroTik
+        /routing bgp instance
+        set default router-id=6.6.6.6
+        /routing ospf instance
+        set [ find default=yes ] router-id=6.6.6.6
+        /interface bridge port
+        add bridge=VPLS interface=ether3
+        add bridge=VPLS interface=vpls1
+        add bridge=VPLS interface=vpls2
+        /ip address
+        add address=172.31.255.30/30 interface=ether1 network=172.31.255.28
+        add address=6.6.6.6 interface=Lo network=6.6.6.6
+        add address=172.16.6.2/30 interface=ether2 network=172.16.6.0
+        add address=192.168.30.1/30 interface=ether3 network=192.168.30.0
+        /ip dhcp-client
+        add disabled=no interface=ether1
+        /mpls ldp
+        set enabled=yes
+        /mpls ldp interface
+        add interface=ether2
+        /routing bgp peer
+        add address-families=ip,l2vpn,l2vpn-cisco,vpnv4 name=peer1 remote-address=5.5.5.5 remote-as=65530 \
+            update-source=Lo
+        /routing ospf network
+        add area=backbone
+        /system identity
+        set name=R01.SVL
+  
 
 ### Вывод
 В ходе лабораторной работы №4 изучены протоколы BGP, MPLS, правила организации L3VPN и VPLS, настроен VRF и VPLS.
