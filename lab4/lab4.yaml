@@ -2,7 +2,7 @@ name: lab4
 
 mgmt:
   network: statics
-  ipv4_subnet: 172.20.24.0/24
+  ipv4_subnet: 172.21.24.0/24
 
 topology:
 
@@ -10,47 +10,47 @@ topology:
     R01.NY:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.2
+      mgmt_ipv4: 172.21.24.2
 
     R01.LND:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.3
+      mgmt_ipv4: 172.21.24.3
 
     R01.HKI:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.4
+      mgmt_ipv4: 172.21.24.4
 
     R01.SPB:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.5
+      mgmt_ipv4: 172.21.24.5
 
     R01.LBN:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.6
+      mgmt_ipv4: 172.21.24.6
       
     R01.SVL:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.7
+      mgmt_ipv4: 172.21.24.7
 
     PC1:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.8
+      mgmt_ipv4: 172.21.24.8
 
     PC2:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.9
+      mgmt_ipv4: 172.21.24.9
       
     PC3:
       kind: vr-ros
       image: vrnetlab/vr-routeros:6.47.9
-      mgmt_ipv4: 172.20.24.10   
+      mgmt_ipv4: 172.21.24.10   
   
 
   links:
